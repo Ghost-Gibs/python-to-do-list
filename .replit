@@ -1,0 +1,32 @@
+modules = ["python-3.11"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Python Runner"
+
+[[workflows.workflow]]
+name = "Python Runner"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+#args = "python exception_handling.py"
+#args = "python atm_withdrawal.py"
+args = "python project_python.py"
+#args = "python returns.py"
+#args = "python main.py"
+#args = "python final_loop_chal.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[agent]
+expertMode = true
